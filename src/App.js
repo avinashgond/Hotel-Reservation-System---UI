@@ -13,7 +13,7 @@ function App() {
   };
 
   const addRoom = async () => {
-    const res = await axios.post('/add-room');
+    const res = await axios.post('https://hrs-yj2n.onrender.com/shivaji-hotel/add-room');
     fetchRooms();
   };
 
