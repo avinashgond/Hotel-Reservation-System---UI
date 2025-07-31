@@ -1,0 +1,127 @@
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.top-bar input {
+  width: 100px;
+  padding: 5px;
+}
+
+button {
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.message {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* .room-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.floor-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.lift-box {
+  width: 60px;
+  height: 50px;
+  background-color: #ccc;
+  line-height: 50px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.room-box {
+  width: 60px;
+  height: 50px;
+  line-height: 50px;
+  border: 1px solid #999;
+  margin-right: 5px;
+  border-radius: 4px;
+}
+*/
+.message {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.message.error {
+  color: red;
+}
+
+.message.success {
+  color: green;
+} 
+
+
+.room-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* important: aligns top of lift with top of rooms */
+  gap: 20px;
+}
+ 
+.lift-stairs-box {
+  width: 40px;
+  background-color: #ccc;
+  border: 2px solid #999;
+  border-radius: 8px;
+  font-weight: bold;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  padding: 10px;
+  height: calc(47px * 10 + 90px); /* adjust height for 10 rows + margins */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 0;
+}
+ 
+.lift-stairs-label {
+  transform: rotate(180deg);
+}
+ 
+.floors-column {
+  display: flex;
+  flex-direction: column;
+}
+ 
+.floor-row {
+  display: flex;
+  margin-bottom: 10px;
+}
+ 
+.room-box {
+  width: 45px;
+  height: 45px;
+  line-height: 50px;
+  border: 2px solid #999;
+  margin-right: 5px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+}
+ 
+.room-box.booked {
+  background-color: #d3d3d3;
+  color: #666;
+  opacity: 0.7;
+  pointer-events: none;
+}
