@@ -8,7 +8,7 @@ function App() {
   const [message, setMessage] = useState('');
 
   const fetchRooms = async () => {
-    const res = await axios.get('/available-rooms');
+    const res = await axios.get('https://hrs-yj2n.onrender.com/shivaji-hotel/available-rooms');
     setRooms(res.data);
   };
 
