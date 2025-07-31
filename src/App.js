@@ -12,6 +12,11 @@ function App() {
     setRooms(res.data);
   };
 
+  const addRoom = async () => {
+    const res = await axios.post('/add-room');
+    fetchRooms();
+  };
+
   useEffect(() => {
     fetchRooms();
   }, []);
@@ -70,6 +75,7 @@ function App() {
         <button onClick={handleBook}>Book</button>
         <button onClick={handleReset}>Reset</button>
         <button onClick={handleRandom}>Random</button>
+        <button onClick={addRoom}>addRoom</button>
       </div>
 
       {/* {message && <p className="message">{message}</p>} */}
