@@ -6,6 +6,7 @@ function App() {
   const [rooms, setRooms] = useState([]);
   const [roomCount, setRoomCount] = useState(1);
   const [message, setMessage] = useState('');
+  const BASE_URL = 'https://hrs-yj2n.onrender.com/shivaji-hotel';
 
   const fetchRooms = async () => {
     const res = await axios.get('/available-rooms');
@@ -21,16 +22,27 @@ function App() {
     fetchRooms();
   }, []);
 
-  const handleBook = async () => {
-    try {
-      const res = await axios.post(`/book-room/${roomCount}`);
-      setMessage(`Booked ${res.data.length} room(s) successfully.`);
-      fetchRooms();
-    } catch (err) {
-      setMessage(err.response?.data?.message || 'Booking failed. Only 5 rooms allowed');
-    }
-  };
+  // const handleBook = async () => {
+  //   try {
+  //     const res = await axios.post(`/book-room/${roomCount}`);
+  //     setMessage(`Booked ${res.data.length} room(s) successfully.`);
+  //     fetchRooms();
+  //   } catch (err) {
+  //     setMessage(err.response?.data?.message || 'Booking failed. Only 5 rooms allowed');
+  //   }
+  // };
+
   
+const handleBook = async () => {
+  try {
+    const res = await axios.post(`${BASE_URL}/book-room/${roomCount}`);
+    setMessage(`Booked ${res.data.length} room(s) successfully.`);
+    fetchRooms();
+  } catch (err) {
+    setMessage(err.response?.data?.message || 'Booking failed. Only 5 rooms allowed');
+  }
+};
+
 
   const handleRandom = async () => {
     await axios.post('/rooms/random-occupancy');
