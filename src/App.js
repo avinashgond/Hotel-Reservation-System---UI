@@ -9,12 +9,12 @@ function App() {
   const BASE_URL = 'https://hrs-yj2n.onrender.com/shivaji-hotel';
 
   const fetchRooms = async () => {
-    const res = await axios.get('/available-rooms');
+    const res = await axios.get('https://hrs-yj2n.onrender.com/shivaji-hotel/available-rooms');
     setRooms(res.data);
   };
 
   const addRoom = async () => {
-    const res = await axios.post('/add-room');
+    const res = await axios.post('https://hrs-yj2n.onrender.com/shivaji-hotel/add-room');
     fetchRooms();
   };
 
