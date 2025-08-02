@@ -26,36 +26,7 @@ button {
   font-weight: bold;
 }
 
-/* .room-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.floor-row {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.lift-box {
-  width: 60px;
-  height: 50px;
-  background-color: #ccc;
-  line-height: 50px;
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-.room-box {
-  width: 60px;
-  height: 50px;
-  line-height: 50px;
-  border: 1px solid #999;
-  margin-right: 5px;
-  border-radius: 4px;
-}
-*/
 .message {
   margin: 10px 0;
   font-weight: bold;
@@ -134,7 +105,7 @@ button {
 }
 
 .side-panel {
-  width: 250px;
+  width: 450px;
   background-color: #f7f7f7;
   border: 1px solid #ccc;
   border-radius: 8px;
