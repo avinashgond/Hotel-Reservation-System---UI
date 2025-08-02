@@ -85,32 +85,67 @@ function App() {
     {message}
   </p>
 )}
-        <div className="room-grid">
-  {/* Single vertical lift box */}
-  <div className="lift-stairs-box">
-    <div className="lift-stairs-label">Lift / Stairs</div>
+<div className="main-container">
+  {/* Left Side Panel */}
+  <div className="side-panel left-panel">
+    <h3>🏨 Hotel Structure & Booking Rules</h3>
+    <p><strong>🏢 Hotel Layout</strong><br />
+      The hotel has 97 rooms across 10 floors.<br />
+      Floors 1–9: 10 rooms each (101–910)<br />
+      Floor 10: 7 rooms (1001–1007)
+    </p>
+    <p><strong>🛗 Building Structure</strong><br />
+      Lift & Stairs are on the left. Rooms go left to right on each floor.
+    </p>
+    <p><strong>⏱️ Room Proximity</strong><br />
+      Horizontal: 1 min/room<br />
+      Vertical: 2 mins/floor
+    </p>
+    <p><strong>📋 Booking Rules</strong><br />
+      Max 5 rooms per booking.<br />
+      Priority: same floor → least travel time
+    </p>
   </div>
- 
-  {/* Floors and rooms */}
-  <div className="floors-column">
-    {sortedFloors.map(([floor, floorRooms]) => (
-      <div key={floor} className="floor-row">
-        {floorRooms
-          .sort((a, b) => parseInt(a.roomNumber) - parseInt(b.roomNumber))
-          .map((room) => (
-            <div
-              key={room.roomNumber}
-              className="room-box"
-              style={{ backgroundColor: getRoomColor(room.status) }}
-              // className={`room-box ${room.status === 'BOOKED' ? 'booked' : ''}`}
-            >
-              {room.roomNumber}
-            </div>
-          ))}
-      </div>
-    ))}
+
+  {/* Center Room Grid */}
+  <div className="room-grid">
+    <div className="lift-stairs-box">
+      <div className="lift-stairs-label">Lift / Stairs</div>
+    </div>
+    <div className="floors-column">
+      {sortedFloors.map(([floor, floorRooms]) => (
+        <div key={floor} className="floor-row">
+          {floorRooms
+            .sort((a, b) => parseInt(a.roomNumber) - parseInt(b.roomNumber))
+            .map((room) => (
+              <div
+                key={room.roomNumber}
+                className="room-box"
+                style={{ backgroundColor: getRoomColor(room.status) }}
+              >
+                {room.roomNumber}
+              </div>
+            ))}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Right Side Panel */}
+  <div className="side-panel right-panel">
+    <h3>📋 Instructions</h3>
+    <ol>
+      <li>Click <strong>addRoom</strong> if rooms are not showing</li>
+      <li>Use <strong>Book, Reset, Random</strong> as needed</li>
+    </ol>
+    <p><strong>Room Color Legend:</strong></p>
+    <ul>
+      <li><span className="legend-box green"></span> Available</li>
+      <li><span className="legend-box grey"></span> Booked</li>
+    </ul>
   </div>
 </div>
+
      
     </div>
   );
