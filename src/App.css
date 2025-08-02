@@ -125,3 +125,53 @@ button {
   opacity: 0.7;
   pointer-events: none;
 }
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.side-panel {
+  width: 250px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.legend-box {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+.legend-box.green {
+  background-color: lightgreen;
+}
+
+.legend-box.grey {
+  background-color: grey;
+}
+
+@media (max-width: 1000px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .side-panel {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+
